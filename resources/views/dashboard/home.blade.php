@@ -1,0 +1,29 @@
+@extends('layouts.app')
+
+@section('title','Dashboard')
+
+
+@section('content')
+    <section class="section">
+          <div class="section-header">
+            <h1>Dashboard</h1>
+          </div>
+
+          <div class="section-body">
+            <h1>Hola</h1>
+          </div>
+    </section>
+@endsection
+
+@section('sidebar')
+    @parent
+    <li class="menu-header">Data Master</li>
+    <li class="nav-item dropdown">
+    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Data Master</span></a>
+    <ul class="dropdown-menu">
+        <li><a class="nav-link" href="layout-default.html">Penyaluran</a></li>
+        <li><a class="nav-link" href="layout-transparent.html">Penerimaan</a></li>
+        <li><a class="nav-link" href="layout-top-navigation.html"></a></li>
+    </ul>
+    </li>
+@endsection
