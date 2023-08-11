@@ -1,25 +1,32 @@
+@section('title','Login')
 @extends('layouts.custom')
       <div class="d-flex flex-wrap align-items-stretch">
         <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
           <div class="p-4 m-3">
             <img src="../assets/img/logo-login.png" alt="logo" width="150" class=" mb-5 mt-2">
-            <form method="POST" action="#" class="needs-validation" novalidate="">
+            <form method="POST" action="{{route('login')}}" class="needs-validation" novalidate="">
+                @csrf
               <div class="form-group">
                 <label for="email">Username</label>
-                <input id="Username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" tabindex="1"  autofocus>
+                @error('email')
                 <div class="invalid-feedback">
-                  Please fill in your Username
-                </div>
+                    {{$message}}
+                  </div>
+                @enderror
+
               </div>
 
               <div class="form-group">
                 <div class="d-block">
                   <label for="password" class="control-label">Password</label>
                 </div>
-                <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror " name="password" tabindex="2" >
+                @error('password')
                 <div class="invalid-feedback">
-                  please fill in your password
-                </div>
+                    {{$message}}
+                  </div>
+                @enderror
               </div>
 
               <div class="form-group">
@@ -30,7 +37,7 @@
               </div>
 
               <div class="form-group text-right">
-                <a href="{{route('forgot')}}" class="float-left mt-3 text-danger">
+                <a href="#" class="float-left mt-3 text-danger">
                   Forgot Password?
                 </a>
                 <button type="submit" class="btn btn-danger btn-lg btn-icon icon-right" tabindex="4">

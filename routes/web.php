@@ -13,24 +13,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Auth
-Route::get('/login', function () {
+// Route::get('/login', function () {
+//     return view('auth.login');
+// })->name('login');
+
+// Route::get('/register', function () {
+//     return view('auth.register');
+// })->name('register');
+
+// Route::get('/forgot', function () {
+//     return view('auth.forgot');
+// })->name('forgot');
+
+// Route::get('/reset', function () {
+//     return view('auth.reset');
+// })->name('reset');
+
+
+Route::get('/', function () {
     return view('auth.login');
-})->name('login');
-
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
-
-Route::get('/forgot', function () {
-    return view('auth.forgot');
-})->name('forgot');
-
-Route::get('/reset', function () {
-    return view('auth.reset');
-})->name('reset');
+});
 
 
-// Dashboard Admin
-Route::get('/dashboard', function () {
-    return view('dashboard.home');
-})->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('home', function () {
+        // dd(auth()->user());
+        return view('dashboard.home');
+    })->name('home');
+
+    Route::get('spbu', function () {
+        // dd(auth()->user());
+        return view('dashboard.spbu');
+    })->name('sbpu');
+
+
+});
+
+
