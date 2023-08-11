@@ -81,9 +81,9 @@
                 <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                     <h4>DATA SPBU</h4>
                     <div>
-                      <button class="btn btn-danger"><i class="fas fa-download"></i> Export</button>
-                      <button class="btn btn-success"><i class="fas fa-upload"></i> Import</button>
-                      <button class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Data</button>
+                      <a type="file" class="btn btn-danger text-white"><i class="fas fa-download"></i> Export</a>
+                      <a type="file" class="btn btn-success text-white"><i class="fas fa-upload"></i> Import</a>
+                      <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Data</a>
                     </div>
                 </div>
 
