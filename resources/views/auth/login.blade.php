@@ -4,11 +4,16 @@
         <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
           <div class="p-4 m-3">
             <img src="../assets/img/logo-login.png" alt="logo" width="150" class=" mb-5 mt-2">
+            @if (session('status'))
+                <div class="mb-4 font-medium text-sm text-green-600">
+                    {{ session('status') }}
+                </div>
+            @endif
             <form method="POST" action="{{route('login')}}" class="needs-validation" novalidate="">
                 @csrf
               <div class="form-group">
-                <label for="email">Username</label>
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" tabindex="1"  autofocus>
+                <label for="login">Email Or Username</label>
+                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" tabindex="1"  autofocus>
                 @error('email')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -37,7 +42,7 @@
               </div>
 
               <div class="form-group text-right">
-                <a href="#" class="float-left mt-3 text-danger">
+                <a href="{{route('password.request')}}" class="float-left mt-3 text-danger">
                   Forgot Password?
                 </a>
                 <button type="submit" class="btn btn-danger btn-lg btn-icon icon-right" tabindex="4">

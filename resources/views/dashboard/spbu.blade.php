@@ -95,11 +95,10 @@
                         <th class="text-center">
                           #
                         </th>
-                        <th>Task Name</th>
-                        <th>Progress</th>
-                        <th>Members</th>
-                        <th>Due Date</th>
-                        <th>Status</th>
+                        <th>Data Perusahaan</th>
+                        <th>SAM</th>
+                        <th>SBM</th>
+                        <th>Data Pengguna</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -108,18 +107,29 @@
                         <td>
                           1
                         </td>
-                        <td>Create a mobile app</td>
-                        <td class="align-middle">
-                          <div class="progress" data-height="4" data-toggle="tooltip" title="100%">
-                            <div class="progress-bar bg-success" data-width="100%"></div>
-                          </div>
+                        <td>
+                            <h6 style="margin: 0; line-height: 1;">PT TESTING</h6>
+                            <p style="margin: 0; line-height: 1;">No.LP : </p>
+                            <p style="margin: 0; line-height: 1;">Jenis LP : </p>
+                            <p style="margin: 0; line-height: 1;">SAM :</p>
+                            <p style="margin: 0; line-height: 1;">SBM :</p>
+                        </td>
+
+                        <td>
+                          SAM RETAIL PAPUA
                         </td>
                         <td>
-                          <img alt="image" src="../assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                         RAYON I
                         </td>
-                        <td>2018-01-20</td>
-                        <td><div class="badge badge-success">Completed</div></td>
-                        <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                        <td>
+                            <p style="margin: 0; line-height: 1;">Email :</p>
+                           <p style="margin: 0; line-height: 1;"> No.Telp :</p>
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
+                            <a href="#" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -130,29 +140,4 @@
         </div>
       </div>
   </div>
-@endsection
-
-@section('sidebar')
-    @parent
-    <li class="menu-header">Data Master</li>
-    <li class="nav-item dropdown">
-    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i> <span>Management Users</span></a>
-    <ul class="dropdown-menu">
-        <li><a class="nav-link" href="layout-default.html">Data Pengguna</a></li>
-    </ul>
-    </li>
-    <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-university"></i><span>Lembaga Penyalur</span></a>
-        <ul class="dropdown-menu">
-            <li ><a class="nav-link" href="credits.html"><i class="fa fa-truck"></i> <span>Penyaluran</span></a></li>
-        </ul>
-        </li>
-    <li class="menu-header">Laporan</li>
-    <li ><a class="nav-link" href="credits.html"><i class="fas fa-download"></i> <span>Penyaluran</span></a></li>
-    <li ><a class="nav-link" href="credits.html"><i class="fas fa-upload"></i> <span>Penerimaan</span></a></li>
-
-    <li class="menu-header">SPBU</li>
-    <li ><a class="nav-link" href="{{'spbu'}}"><i class="fas fa-gas-pump"></i> <span>Data Spbu</span></a></li>
-    </li>
-
 @endsection

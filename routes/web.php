@@ -35,16 +35,24 @@ Route::get('/', function () {
 });
 
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
+    // HOME DSHBOARD
     Route::get('home', function () {
         // dd(auth()->user());
         return view('dashboard.home');
     })->name('home');
 
+    // SPBU
     Route::get('spbu', function () {
         // dd(auth()->user());
         return view('dashboard.spbu');
     })->name('sbpu');
+
+    // MANAGEMENTS PENGGUNA
+    Route::get('pengguna', function () {
+        // dd(auth()->user());
+        return view('dashboard.pengguna');
+    })->name('pengguna');
 
 
 });
